@@ -6,4 +6,15 @@
     <input type="submit" value="Make a new post">
 </form>
 
+<% if (locals.allPosts) { %>
+    <%allPosts.forEach(post => { %>
+        <h2>
+            <%= post.title %> 
+        </h2>
+        <p>
+            <%= post.content %>
+        </p>
+        
+    <% }); %>
+<% } %>
 <%- include("partials/footer.ejs") %>

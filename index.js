@@ -8,8 +8,12 @@ app.use(express.static("public"));
 
 //app.use(bodyParser.urlencoded({ extended: true }));
 
+var posts = [{title:"hello", content:"there"}];
+
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.render("index.ejs", {
+    allPosts : posts
+  });
 });
 
 app.get("/new-post", (req, res) => {
