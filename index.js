@@ -14,7 +14,10 @@ var latestTitle, latestContent;
 function updateLatestPost(req, res, next) {
     latestTitle = req.body["title"];
     latestContent = req.body["content"];
-    posts.push({title: latestTitle, content: latestContent});
+    if (latestTitle && latestContent) {
+        posts.push({title: latestTitle, content: latestContent});
+    }
+    
     next();
 }
 

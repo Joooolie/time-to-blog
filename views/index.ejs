@@ -3,17 +3,33 @@
 <form action="/new-post" method="GET">
     <input type="submit" value="Make a new post">
 </form>
-
-<h2>Recent Posts</h2>
-<% if (locals.allPosts) { %>
-    <%allPosts.forEach(post => { %>
-        <h3>
-            <%= post.title %> 
-        </h3>
-        <p>
-            <%= post.content %>
-        </p>
+<%var index = 0;%>
+<% if (locals.allPosts && locals.allPosts.length > 0) { %>
+    <h2>Recent Posts</h2>
+    <%# console.log(allPosts); %>
+    <%locals.allPosts.forEach((post, allPosts) => { %>
+        <% console.log(allPosts); %>
+        <div>
+            <h3>
+                <%= post.title %> 
+            </h3>
+            <p>
+                <%= post.content %>
+            </p>
+            <button type="button" onclick="deletePost(0)">Delete</button> 
+        </div>
+        
         
     <% }); %>
 <% } %>
+
+<script>
+    function deletePost(postId) {
+        //locals.allPosts.splice(postId, 1);
+        // Call a backend endpoint or perform any necessary logic to delete the post with the given ID
+        console.log("Deleting post with ID:", postId);
+        // Optionally, you can update the UI or reload the page after deletion
+    }
+</script>
+
 <%- include("partials/footer.ejs") %>
