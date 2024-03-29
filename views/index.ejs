@@ -1,16 +1,15 @@
 <%- include("partials/header.ejs") %>
 
-<h1>Home Page</h1>
-
 <form action="/new-post" method="GET">
     <input type="submit" value="Make a new post">
 </form>
 
+<h2>Recent Posts</h2>
 <% if (locals.allPosts) { %>
     <%allPosts.forEach(post => { %>
-        <h2>
+        <h3>
             <%= post.title %> 
-        </h2>
+        </h3>
         <p>
             <%= post.content %>
         </p>
