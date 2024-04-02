@@ -37,6 +37,10 @@ app.post("/submit", (req, res) => {
   res.redirect("/");
 });
 
+app.get("/delete", (req, res) => {
+  posts.splice(req.query.postid, 1);
+  res.redirect("/");
+});
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
