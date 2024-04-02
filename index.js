@@ -30,15 +30,13 @@ app.get("/", (req, res) => {
 });
 
 app.get("/new-post", (req, res) => {
-    res.render("new-post.ejs");
+  res.render("new-post.ejs");
 });
 
 app.post("/submit", (req, res) => {
-    res.render("index.ejs", 
-    {allPosts : posts 
-    }
-    );
+  res.redirect("/");
 });
+
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
