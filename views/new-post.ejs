@@ -2,9 +2,10 @@
 
 <h1>Make a new post</h1>
 
-<form action="/submit" method="POST">
-    <input type="text" name="title" placeholder="Title" required>
-    <input type="text" name="content" placeholder="Write your post..." required>
+<textarea name="title" form="new-post-form" placeholder="Title"></textarea>
+<textarea name="content" form="new-post-form" placeholder="Write your post..."></textarea>
+
+<form action="/submit" method="POST" id="new-post-form">
     <input type="submit" value="Post">
 </form>
 
