@@ -44,9 +44,9 @@ app.get("/new-post", (req, res) => {
 
 app.get("/edit", (req, res) => {
   currentPostId = req.query.postid;
-  res.render("edit-post.ejs", 
-    //currentPostId : req.query.postid
-  );
+  res.render("edit-post.ejs", {
+    editablePost : posts[currentPostId],
+  });
 });
 
 app.post("/submit-edit", (req, res) => {

@@ -2,10 +2,12 @@
 
 <h1>Edit Post</h1>
 
-<form action="/submit-edit" method="POST">
-    <input type="text" name="new-title" placeholder="Edit Title" required>
-    <input type="text" name="new-content" placeholder="Edit Post" required>
+<textarea name="new-title" form="edit-post-form"><%= editablePost["title"]%></textarea>
+<textarea name="new-content" form="edit-post-form"><%= editablePost["content"]%></textarea>
+
+<form action="/submit-edit" method="POST" id="edit-post-form">
     <input type="submit" value="Post">
 </form>
+
 
 <%- include("partials/footer.ejs") %>
