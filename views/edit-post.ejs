@@ -1,0 +1,11 @@
+<%- include("partials/header.ejs") %>
+
+<h1>Edit Post</h1>
+
+<form action="/submit-edit" method="POST">
+    <input type="text" name="new-title" placeholder="Edit Title" required>
+    <input type="text" name="new-content" placeholder="Edit Post" required>
+    <input type="submit" value="Post">
+</form>
+
+<%- include("partials/footer.ejs") %>
