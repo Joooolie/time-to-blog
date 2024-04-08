@@ -1,12 +1,14 @@
 <%- include("partials/header.ejs") %>
 
-<form action="/new-post" method="GET">
-    <input type="submit" value="Make a new post" class="btn btn-primary btn-lg px-4 gap-3">
-</form>
-
 <%var index = 0;%>
 <% if (locals.allPosts && locals.allPosts.length > 0) { %>
     <div class="justify-content-sm-center mt-4">
+        <div class="mb-4 pt-10">
+            <form action="/new-post" method="GET">
+                <input type="submit" value="Make a new post" class="btn btn-primary btn-lg px-4 gap-3">
+            </form>
+        </div>
+        
         <h2 class="pb-4 mb-4 fw-bold display-4 border-bottom">
             Recent Posts
         </h2>
@@ -15,7 +17,6 @@
                 <div class="mb-5">
                     <article class="blog-post">
                         <h3 class="text-start display-6 link-body-emphasis">
-                            <% console.log(locals.allPosts[i]) %>
                             <%= (locals.allPosts[i])["title"]%> 
                         </h3>
                         <p class="text-start support-answer-textarea">
@@ -37,6 +38,11 @@
             <div class="col-lg-6 mx-auto">
             <p class="lead mb-4">Craft Your Story, Share Your Passion: Where Blogs Begin.</p>
             </div>
+
+            <form action="/new-post" method="GET">
+                <input type="submit" value="Make a new post" class="btn btn-primary btn-lg px-4 gap-3">
+            </form>
+            
         </div>
 <% } %>
 
