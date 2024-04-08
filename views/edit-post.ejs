@@ -1,11 +1,18 @@
 <%- include("partials/header.ejs") %>
 
-<h1>Edit Post</h1>
-
-<textarea name="new-title" form="edit-post-form"><%= editablePost["title"]%></textarea>
-<textarea name="new-content" form="edit-post-form"><%= editablePost["content"]%></textarea>
-
 <form action="/submit-edit" method="POST" id="edit-post-form">
+    <div class="mb-3">
+        <h1>Edit Post</h1>
+    </div>
+    
+    <div class="mb-3">
+        <textarea class="form-control" name="new-title" form="edit-post-form" id="floatingTitle"><%= editablePost["title"]%></textarea>
+    </div>
+
+    <div class="mb-3">
+        <textarea class="form-control" name="new-content" form="edit-post-form" id="floatingContent"><%= editablePost["content"]%></textarea>
+    </div>
+
     <input type="submit" value="Post" class="btn btn-primary btn-lg px-4 gap-3">
 </form>
 
