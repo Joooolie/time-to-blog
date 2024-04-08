@@ -10,23 +10,25 @@
         <h2 class="pb-4 mb-4 fw-bold display-4 border-bottom">
             Recent Posts
         </h2>
-        <%locals.allPosts.forEach((post, i) => { %>
-            <div class="mb-5">
-                <article class="blog-post">
-                    <h3 class="text-start display-6 link-body-emphasis">
-                        <%= post.title %> 
-                    </h3>
-                    <p class="text-start support-answer-textarea">
-                        <%= post.content %>
-                    </p>
-                    <div>
-                        <a href="/edit?postid=<%= i%>" class="btn btn-primary btn-sm rounded-pill px-3">Edit</a> 
-                        <a href="/delete?postid=<%= i%>" class="btn btn-danger btn-sm rounded-pill px-3">Delete</a> 
-                    </div>
-                </article>
-            </div>
-            
-        <% }); %>
+        <% for (let i = (locals.allPosts.length-1); i >=0; i--) { %>
+            <% if (locals.allPosts[i]) { %>
+                <div class="mb-5">
+                    <article class="blog-post">
+                        <h3 class="text-start display-6 link-body-emphasis">
+                            <% console.log(locals.allPosts[i]) %>
+                            <%= (locals.allPosts[i])["title"]%> 
+                        </h3>
+                        <p class="text-start support-answer-textarea">
+                            <%= (locals.allPosts[i])["content"] %>
+                        </p>
+                        <div>
+                            <a href="/edit?postid=<%= i%>" class="btn btn-primary btn-sm rounded-pill px-3">Edit</a> 
+                            <a href="/delete?postid=<%= i%>" class="btn btn-danger btn-sm rounded-pill px-3">Delete</a> 
+                        </div>
+                    </article>
+                </div>
+            <% } continue;%>
+        <% }; %>
     </div>
 <% } %>
 
