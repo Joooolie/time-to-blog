@@ -1,7 +1,7 @@
 <%- include("partials/header.ejs") %>
 
 <form action="/new-post" method="GET">
-    <input type="submit" value="Make a new post" class="button">
+    <input type="submit" value="Make a new post" class="btn btn-primary btn-lg px-4 gap-3">
 </form>
 
 <%var index = 0;%>
@@ -15,8 +15,8 @@
             <p>
                 <%= post.content %>
             </p>
-            <a href="/edit?postid=<%= i%>" class="button">Edit</a> 
-            <a href="/delete?postid=<%= i%>" class="button">Delete</a> 
+            <a href="/edit?postid=<%= i%>" class="btn btn-primary btn-lg px-4 gap-3">Edit</a> 
+            <a href="/delete?postid=<%= i%>" class="btn btn-primary btn-lg px-4 gap-3">Delete</a> 
         </div>
         
         
